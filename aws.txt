@@ -1,0 +1,240 @@
+Policy Settings
+
+User 1,2 and 3
+Or 1 and 4
+
+1. IAMFullAccess
+2. DjangoLambda
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "dynamodb:DescribeTable",
+            "Resource": "arn:aws:dynamodb:*:257808123322:table/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:DeleteStackInstances",
+                "iam:GetPolicyVersion",
+                "events:EnableRule",
+                "sqs:ReceiveMessage",
+                "logs:*",
+                "cloudformation:DescribeStackResource",
+                "cloudformation:UpdateStackSet",
+                "cloudformation:CreateChangeSet",
+                "iam:PutRolePolicy",
+                "cloudformation:ContinueUpdateRollback",
+                "xray:PutTraceSegments",
+                "cloudformation:DescribeStackEvents",
+                "events:ListRuleNamesByTarget",
+                "iam:ListAttachedRolePolicies",
+                "cloudformation:UpdateStack",
+                "events:ListRules",
+                "events:RemoveTargets",
+                "s3:HeadBucket",
+                "cloudformation:DescribeChangeSet",
+                "iam:ListRolePolicies",
+                "apigateway:GET",
+                "cloudformation:CreateStackSet",
+                "cloudformation:ExecuteChangeSet",
+                "events:ListTargetsByRule",
+                "cloudformation:ListStackResources",
+                "events:PutEvents",
+                "iam:GetRole",
+                "events:DescribeRule",
+                "s3:PutAccountPublicAccessBlock",
+                "iam:GetPolicy",
+                "cloudformation:DescribeStackInstance",
+                "cloudformation:DescribeStackResources",
+                "sqs:SendMessage",
+                "cloudformation:SignalResource",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackResourceDrifts",
+                "cloudwatch:*",
+                "cloudformation:GetTemplate",
+                "cloudformation:DeleteStack",
+                "dynamodb:DescribeReservedCapacity",
+                "apigateway:POST",
+                "ec2:DescribeSubnets",
+                "iam:GetRolePolicy",
+                "cloudformation:ValidateTemplate",
+                "cloudformation:CreateUploadBucket",
+                "cloudformation:CancelUpdateStack",
+                "tag:GetResources",
+                "xray:PutTelemetryRecords",
+                "cloudformation:UpdateStackInstances",
+                "events:PutRule",
+                "dynamodb:PurchaseReservedCapacityOfferings",
+                "cloudformation:UpdateTerminationProtection",
+                "dynamodb:ListTagsOfResource",
+                "cloudformation:CreateStackInstances",
+                "cloudformation:DeleteChangeSet",
+                "apigateway:DELETE",
+                "iam:PassRole",
+                "dynamodb:DescribeReservedCapacityOfferings",
+                "dynamodb:TagResource",
+                "apigateway:PATCH",
+                "cloudformation:StopStackSetOperation",
+                "dynamodb:DescribeLimits",
+                "events:DisableRule",
+                "cloudformation:SetStackPolicy",
+                "sqs:ListQueues",
+                "dynamodb:UntagResource",
+                "apigateway:PUT",
+                "iam:ListRoles",
+                "dynamodb:DescribeTimeToLive",
+                "cloudformation:DeleteStackSet",
+                "dynamodb:ListStreams",
+                "ec2:DescribeSecurityGroups",
+                "events:DeleteRule",
+                "events:PutTargets",
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAllMyBuckets",
+                "cloudformation:DescribeStackSet",
+                "cloudformation:CreateStack",
+                "ec2:DescribeVpcs",
+                "lambda:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "VisualEditor2",
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": "*"
+        }
+    ]
+}
+
+3. DjangoZappa
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:*"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "lambda:InvokeFunction"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "xray:PutTraceSegments",
+                "xray:PutTelemetryRecords"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AttachNetworkInterface",
+                "ec2:CreateNetworkInterface",
+                "ec2:DeleteNetworkInterface",
+                "ec2:DescribeInstances",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DetachNetworkInterface",
+                "ec2:ModifyNetworkInterfaceAttribute",
+                "ec2:ResetNetworkInterfaceAttribute"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": "arn:aws:s3:::*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kinesis:*"
+            ],
+            "Resource": "arn:aws:kinesis:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sns:*"
+            ],
+            "Resource": "arn:aws:sns:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "sqs:*"
+            ],
+            "Resource": "arn:aws:sqs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:*"
+            ],
+            "Resource": "arn:aws:dynamodb:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "route53:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+
+4. Other
+https://github.com/bodycalc/bodycalc.io/blob/master/aws-iam-policy.json
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "lambda:*",
+                "s3:*",
+                "events:*",
+                "iam:CreateServiceSpecificCredential",
+                "iam:GetRole",
+                "iam:CreateRole",
+                "iam:PutRolePolicy",
+                "iam:PassRole",
+                "iam:CreateServiceLinkedRole",
+                "apigateway:PUT",
+                "apigateway:DELETE",
+                "apigateway:PATCH",
+                "apigateway:POST",
+                "apigateway:GET",
+                "logs:DescribeLogStreams",
+                "logs:FilterLogEvents",
+                "cloudformation:DescribeStackResource",
+                "cloudformation:DescribeStacks",
+                "cloudformation:CreateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:UpdateStack",
+                "cloudformation:ListStackResources"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
